@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>#1 Template Basic</title>
+</head>
+<body>
+
+<!-- This is a First Comment -->
+ 
+{% comment %} This is a Second Comment requmendend {% endcomment %}
+ 
+ {# This is a Third Comment #}
+
+<h1 style="color: blue;">This is a Home page Heading</h1>
+<p>This is a Home page paragraph.</p>
+
+{% comment %} Single Variable {% endcomment %}
+
+<p>Name : {{name}} </p>
+<p>Age : {{age}} </p>
+
+{% comment %} List Access {% endcomment %}
+
+<p>Skills 1 : {{skills.0}} </p>
+<p>Skills 1 : {{skills.1}} </p>
+<p>Skills 1 : {{skills.2}} </p>
+
+{% comment %} Objacts {% endcomment %}
+
+<p>User Name : {{user.name}} </p>
+<p>User Age : {{user.age}} </p>
+
+{% comment %} Dictionary {% endcomment %}
+
+<p><-------------------Blog Information-------------------></p>
+
+<p>Title : {{blog.title}} </p>
+<p>Content : {{blog.content}} </p>
+<p>Date_Time : {{blog.created_at}} </p>
+<p>Content : {{blog.content|safe}} </p>
+
+{% comment %} default Value {% endcomment %}
+
+Default Empty Value : {{empty_value|default:"No Value Provided"}}<br>
+Default Empty Value : {{empty_value|default_if_none:"No Data"}}
+
+<p>Author Name : {{blog.author.name}} </p>
+
+
+
+
+
+
+</body>
+</html>

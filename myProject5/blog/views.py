@@ -16,9 +16,12 @@ def home(request):
         'user': User('Ahmad', 30),
         "blog": {
             "title": "Django Template Intro",
+            "author":{
+                "name":"Akram"
+            },
             "content": "<b>This is Blod.</b>",
             "created_at": datetime(2026, 6, 15, 10, 30)
         },
         "empty_value": None
     }
-    return render(request, 'home.html', context)
+    return render(request, "blog/home.html", context)
