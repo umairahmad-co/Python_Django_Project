@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>#2 Template Basic</title>
+</head>
+<body>
+
+    <h1>Blog Filter Page </h1>
+    {% comment %} Text Filter {% endcomment %}
+    <p><b>Title (Normal) :</b>{{post.title}}</p>
+    <p><b>Title (UpperCase) :</b>{{post.title|upper}}</p>
+    <p><b>Title (LowerCase) :</b>{{post.title|lower}}</p>
+    <p><b>Title (Capitalization) :</b>{{post.title|capfirst}}</p>
+    <p><b>Title (TitleCase) :</b>{{post.title|title}}</p>
+    <p><b>Title (Trancate) :</b>{{post.title|truncatechars:15}}</p>
+    <p><b>Title (TrancateWords) :</b>{{post.title|truncatewords:2}}</p>
+    <p><b>Title (LineBreak) :</b>{{post.title|linebreaks}}</p>
+    <p><b>Title (last) :</b>{{post.title|last}}</p>
+    <p><b>Title (First) :</b>{{post.title|first}}</p>
+    <hr>
+
+    {% comment %} Number Filter {% endcomment %}
+    {% comment %} Add {% endcomment %}
+    <p><b>Orignal Price :</b>{{post.price}}</p>
+    <p><b>Orignal Price(+5) :</b>{{post.price|add:5}}</p>
+
+    {% comment %} Division {% endcomment %}
+
+    {% if post.number|divisibleby:2%}
+    <p>{{post.number}} is Even</p>
+    {% else %}
+    <p>{{post.number}} is Odd</p>
+    {% endif %} 
+
+    {% comment %} List Filter {% endcomment %}
+
+
+</body>
+</html>
