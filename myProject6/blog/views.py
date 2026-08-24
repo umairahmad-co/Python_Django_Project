@@ -7,11 +7,11 @@ def blog_details(request):
     post ={
         "title": "My Second Template",
         "description": "Danango is High-level language",
-        "author": "None",
+        "author": "Umair Ahmad",
         "created_at": datetime(2026,8,13,1,11),
-        "comments_count": "5",
+        "comments_count": "1",
         "tags": ["Django","Python","Web Development"],
-        "price":100,
+        "price":187.23546,
         "number":8,
     }
     return render(request,'blog/blog_details.html',{"post":post})

@@ -49,7 +49,36 @@
     <p><b>Created At (Date) :</b>{{post.created_at|date:"Y-m-d"}}</p>
     <p><b>Created At (Time) :</b>{{post.created_at|time:"H:i:s"}}</p>
     <p><b>Created At (Custom) :</b>{{post.created_at|date:"F j, Y, g:i a"}}</p> 
+    <hr>
+
+    {% comment %} Default Filter {% endcomment %}
+    <p><b>Comments Count :</b>{{post.comments_count}}</p>
+    <p><b>Comments Count (Default) :</b>{{post.comments_count|default:"No Comments"}}</p>
+    <hr>
+
+    <h1>Blog Filter Page </h1>
+    <p><b>Author Available :</b>{{post.author|yesno:"Yes,No,May Be"}}</p>
+
+    <p><b>Comments Counts :</b>{{post.comments_count}} Comment{{post.comments_count|pluralize}}</p>
+    <hr>
+
+    <p><b>Title Encoded :</b>{{post.title|urlencode}}</p>
+    <p><b>Float Formate Example :</b>{{post.price|floatformat:3}}</p>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
