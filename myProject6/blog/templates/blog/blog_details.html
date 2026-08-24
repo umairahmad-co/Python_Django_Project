@@ -31,9 +31,25 @@
     {% else %}
     <p>{{post.number}} is Odd</p>
     {% endif %} 
+    <hr>
 
     {% comment %} List Filter {% endcomment %}
-sdasd
+
+    <p><b>First Tag :</b>{{post.tags|first}}</p>
+    <p><b>Last Tag :</b>{{post.tags|last}}</p>
+    <p><b>Tags Count :</b>{{post.tags|length}}</p>
+    <p><b>Slice (First 2) :</b>{{post.tags|slice:":2"}}</p>
+    <p><b>Slice (Last 2) :</b>{{post.tags|slice:"-2:4"}}</p>
+    <p><b>Slice (Middle 2) :</b>{{post.tags|slice:"2:4"}}</p>
+    <p><b>Join :</b>{{post.tags|join:", "}}</p>
+    <hr>
+
+    {% comment %} Date Filter {% endcomment %}
+    <p><b>Created At :</b>{{post.created_at}}</p>
+    <p><b>Created At (Date) :</b>{{post.created_at|date:"Y-m-d"}}</p>
+    <p><b>Created At (Time) :</b>{{post.created_at|time:"H:i:s"}}</p>
+    <p><b>Created At (Custom) :</b>{{post.created_at|date:"F j, Y, g:i a"}}</p> 
+    
 
 </body>
 </html>
