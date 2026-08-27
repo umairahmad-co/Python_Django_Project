@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>#3 Template Basic</title>
+</head>
+<body>
+
+<h1>Bloge List</h1>
+
+{% comment %} if/else {% endcomment %}
+
+{% if blog.0.is_featured %}
+    <h2>Featured Blog : "{{ blog.0.title }}"</h2>
+{% else %}
+    <h2>Not Featured Blog: "{{ blog.0.title }}"</h2>
+{% endif %}
+
+{% comment %} For Loop {% endcomment %}
+
+<ul>
+{% for blog in blog %}
+    <li>{{ forloop.counter }}. {{ blog.author }} - {{ blog.title }}</li>
+    {% empty %}
+        <li>No blogs available.</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
