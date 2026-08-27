@@ -6,7 +6,7 @@
 <body>
 
 <h1>Bloge List</h1>
-
+<p>{{ today }}</p>
 {% comment %} if/else {% endcomment %}
 
 {% if blog.0.is_featured %}
@@ -25,5 +25,42 @@
 {% endfor %}
 </ul>
 
+{% comment %} With {% endcomment %}
+
+{% with total_blogs=blog|length %}
+    <h2>Total Blogs: {{ total_blogs }}</h2>
+{% endwith %}
+<hr>
+{% comment %} Cycle {% endcomment %}
+
+<h2> Blogs in Table</h2>
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr style="background-color: lightgray;">
+        <th>Sr#</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Date</th>
+    </tr>
+    {% for blog in blog %}
+    <tr style="background-color: {% cycle 'lightblue' 'lightgreen' %};">
+        <td>{{ forloop.counter }}</td>
+        <td>{{ blog.title }}</td>
+        <td>{{ blog.author }}</td>
+        <td>{{ blog.date }}</td>
+    </tr>
+    {% endfor %}
+    
+    {% comment %} FirstOf {% endcomment %}
+
+    <p>
+       Authour : {% firstof blog.1.author "Anonymous" %}
+    </p>
+
+    {% comment %} Varbatim {{}} {% endcomment %}
+
+    {% verbatim %}
+    <p>Authour : {{blog.1.author}}</p>
+    {% endverbatim %}
+    
 </body>
 </html>
