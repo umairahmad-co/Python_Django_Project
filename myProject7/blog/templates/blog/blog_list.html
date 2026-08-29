@@ -66,10 +66,10 @@
 
     <h2>AutoEscape</h2>
     <p>Default (Safe Escape) : {{ html_code }}</p>
-    <p>AutoEscape (Off (Method # 1)): {{ html_code|safe}}</p>
+    <p>AutoEscape (Off (Method # 1)) : {{ html_code|safe}}</p>
     
     {% autoescape off %}
-    <p>AutoEscape (Off (Method # 2)): {{ html_code }}</p>
+    <p>AutoEscape (Off (Method # 2)) : {{ html_code }}</p>
     {% endautoescape %}
 
 
